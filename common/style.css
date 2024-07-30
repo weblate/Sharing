@@ -21,8 +21,13 @@ body {
     background: linear-gradient(to right, #010c14, #2e012e);
     color: #ddd;
     padding-top: var(--toolbar-height);
+    overflow: hidden;
 }
 
+.main-div {
+    height: calc(100dvh - var(--toolbar-height));
+    overflow-y: auto;
+}
 .toolbar {
     position: fixed;
     top: 0px;
@@ -30,10 +35,18 @@ body {
     
     width: 100%;
     border-bottom: #373737 1pt solid;
-    background: transparent;
     height: var(--toolbar-height);
 
     display: flex;
     align-items: center;
     padding: 0px 1em;
+}
+
+
+.image-tutorial {
+    border: white 2px solid;
+}
+
+.details-content {
+    padding-left: 3em;
 }
