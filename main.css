@@ -1,0 +1,43 @@
+body {
+    overflow: hidden;
+}
+
+#tutorials-section {
+    display: flex;
+    height: calc(100dvh - var(--toolbar-height));
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5em 0px;
+}
+
+.tutorial-tile {
+    background: #56565677;
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 500ms;
+    width: 90%;
+    margin: 0.5em 1em;
+    padding: 0.7em;
+
+    cursor: pointer;
+}
+
+.tutorial-tile:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.tutorial-tile .tutorial-tile-title {
+    font-weight: bold;
+}
+.tutorial-tile .tutorial-tile-desc {
+    font-size: 0.8em;
+    color: #FFFFFF77;
+}

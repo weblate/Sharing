@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: cairo;
+    src: url("fonts/cairo.ttf");
+}
+
+html {
+    font-family: 'cairo';
+}
+
+:root {
+    --toolbar-height: 4em;
+}
+
+body {
+    background: linear-gradient(to right, #010c14, #2e012e);
+    color: #ddd;
+    padding-top: var(--toolbar-height);
+}
+
+.toolbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    
+    width: 100%;
+    border-bottom: #373737 1pt solid;
+    background: transparent;
+    height: var(--toolbar-height);
+
+    display: flex;
+    align-items: center;
+    padding: 0px 1em;
+}
