@@ -13,7 +13,7 @@
     <header class="toolbar">
         <h2>Use CLI</h2>
     </header>
-    <div class="main-div">
+    <div class="main-div" style="padding-bottom: 20px;">
         1- Toggle on the server and get the local ip address of the device <br>
         <img class="image-tutorial" height="400" src="cli/images/ip.jpg" /><br><br>
 
@@ -52,10 +52,16 @@ http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586</pre>
                 </code><br><br>
 
             </li>
-        </ul>
+        </ul><br>
+
+        Note: You can download all files in a zip archive using this command<br>
+        <code class="code-block">
+            <button class="copy-button" title="Copy"><img src="/Sharing/Tutorial/common/icons/copy.svg"/></button>
+            <span>curl http://192.168.1.7:2999/da -o &lt;file-name.zip&gt;</span>
+        </code>
     </div>
 
-    <div id="snackbar">Some text some message..</div>
+    <div id="snackbar"></div>
     <script>
         const snackbar = document.getElementById("snackbar");
 
