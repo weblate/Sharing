@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use CLI</title>
+    <link rel="stylesheet" href="/Sharing/Tutorial/common/style.css">
+</head>
+
+<body>
+    <header class="toolbar">
+        <h2>Use CLI</h2>
+    </header>
+    <div class="main-div">
+        1- Toggle on the server and get the local ip address of the device <br>
+        <img class="image-tutorial" height="400" src="cli/images/ip.jpg" /><br><br>
+
+        2- Assuming your device ip is 192.168.1.7 as shown in previous image.<br>
+        To list available downloads do the following command.<br>
+        <code class="code-block">
+            <button class="copy-button" title="Copy"><img src="/Sharing/Tutorial/common/icons/copy.svg"/></button>
+            <span>
+            curl http://192.168.1.7:2999/ls
+            </span>
+        </code><br><br>
+        You will get a response like this.<br>
+        <code class="code-block">
+            <pre>Name: Alquran_Alkareem.pdf
+Size: 199.08 MB
+URL:
+http://192.168.1.7:2999/dl/4812e5d6-8677-43dc-8739-eeb364a12abd
+
+Name: App Manager
+Size: 17.21 MB
+URL:
+http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586</pre>
+        </code><br>
+        Notice that the URL of each download has its own line that's so you can double click it to select it easily and copy it.<br>
+        Note: in some terminals you can click on the link while pressing <kbd>Ctrl</kbd> to open it in browser
+        <br><br>
+
+
+        3- After you have copied the link you have 2 options
+        <ul>
+            <li>Paste it in browser</li>
+            <li>download it using curl or any CLI tool
+                <br>
+                <code class="code-block">
+                    <button class="copy-button" title="Copy"><img src="/Sharing/Tutorial/common/icons/copy.svg"/></button>
+                    <span>
+                    curl http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586 -o &lt;file-name&gt;
+                    </span>
+                </code><br><br>
+        
+            </li>
+        </ul>
+    </div>
+</body>
