@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use CLI</title>
     <link rel="stylesheet" href="/Sharing/Tutorial/common/style.css">
+    <link rel="stylesheet" href="cli/style/style.css">
 </head>
 
 <body>
@@ -20,9 +21,7 @@
         To list available downloads do the following command.<br>
         <code class="code-block">
             <button class="copy-button" title="Copy"><img src="/Sharing/Tutorial/common/icons/copy.svg"/></button>
-            <span>
-            curl http://192.168.1.7:2999/ls
-            </span>
+            <span>curl http://192.168.1.7:2999/ls</span>
         </code><br><br>
         You will get a response like this.<br>
         <code class="code-block">
@@ -36,7 +35,8 @@ Size: 17.21 MB
 URL:
 http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586</pre>
         </code><br>
-        Notice that the URL of each download has its own line that's so you can double click it to select it easily and copy it.<br>
+        Notice that the URL of each download has its own line that's so you can double click it to select it easily and
+        copy it.<br>
         Note: in some terminals you can click on the link while pressing <kbd>Ctrl</kbd> to open it in browser
         <br><br>
 
@@ -48,12 +48,31 @@ http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586</pre>
                 <br>
                 <code class="code-block">
                     <button class="copy-button" title="Copy"><img src="/Sharing/Tutorial/common/icons/copy.svg"/></button>
-                    <span>
-                    curl http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586 -o &lt;file-name&gt;
-                    </span>
+                    <span>curl http://192.168.1.7:2999/dl/ed33194e-a619-4ba8-bb88-83e38c2ae586 -o &lt;file-name&gt;</span>
                 </code><br><br>
-        
+
             </li>
         </ul>
     </div>
+
+    <div id="snackbar">Some text some message..</div>
+    <script>
+        const snackbar = document.getElementById("snackbar");
+
+        const copyButtons = document.querySelectorAll(".copy-button");
+        copyButtons.forEach( function (e) {
+            e.addEventListener("click", function() {
+                copyInnerText(e.parentNode.children[1]);
+            })
+        })
+
+        function copyInnerText(element) {
+            let text = element.textContent;
+            navigator.clipboard.writeText(text).then(function () {
+                snackbar.textContent = "Copied successfully"
+                snackbar.className = "show";
+                setTimeout(function () { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+            });
+        }
+    </script>
 </body>
